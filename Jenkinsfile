@@ -79,9 +79,9 @@ pipeline{
             steps{
                script{
 
-                   def JfrogcredentialsId = 'JfrogP'
                    
-                   jfrogMVNBuildPush(JfrogcredentialsId)
+                   
+                   jfrogMVNBuildPush()
                }
             }
         }
