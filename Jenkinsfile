@@ -78,8 +78,10 @@ pipeline{
          when { expression {  params.action == 'create' } }
             steps{
                script{
+
+                   def JfrogcredentialsId = 'JfrogP'
                    
-                   jfrogMVNBuildPush()
+                   jfrogMVNBuildPush(JfrogcredentialsId)
                }
             }
         }
