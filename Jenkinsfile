@@ -73,6 +73,16 @@ pipeline{
                }
             }
         }
+
+        stage('Deploy to JFROG '){
+         when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   
+                   jfrogMVNBuildPush()
+               }
+            }
+        }
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
             steps{
